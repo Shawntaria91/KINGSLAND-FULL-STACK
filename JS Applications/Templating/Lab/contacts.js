@@ -36,3 +36,7 @@ const contacts = [
         email: "david@david.com"
     }
 ];
+
+function showDetails(n) {
+    console.log(n);
+}
