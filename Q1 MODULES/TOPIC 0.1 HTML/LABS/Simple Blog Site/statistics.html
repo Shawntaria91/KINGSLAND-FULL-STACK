@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Statistics</title>
+    <style>
+        table {
+            border: 5;
+            cellpadding: 4;
+            border-style: solid;
+            border-color: black;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        tr.table-title {
+            border-style: solid;
+            text-transform: uppercase;
+        }
+
+        tr,
+        th {
+            text-align: center;
+        }
+
+        td {
+            border-style: solid;
+            border-width: thin;
+        }
+
+        tr.breeds {
+            font-weight: bold;
+        }
+
+        #logo {
+            display: block;
+            float: left;
+            height: auto;
+            width: 60px;
+            margin-bottom: 20px;
+            padding: 0;
+            border: 0;
+        }
+
+        .clearfix {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        tr.source {
+            align: right;
+        }
+
+        h3,
+        img {
+            width: 200px;
+            height: auto;
+        }
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="logo" src="https://encrypted-tbn0.gstatic.com/
+        images?q=tbn:ANd9GcQJslq1bZtxCFxQpAIwFWzX9pcZmvs-LKHhGw&usqp=CAU" />
+    <div class="clearfix">
+        <nav>
+            <a href="index.html">HOME</a> |
+            <a href="galleries.html">GALLERIES</a> |
+            <a href="statistics.html">STATISTICS</a>
+        </nav>
+        <table width="100%">
+            <thead>
+                <tr class="table-title">
+                    <th colspan="5">
+                        <h3>cat breeds</h3>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="breeds">
+                    <td>
+                        <h3>Breed</h3>
+                    </td>
+                    <td>
+                        <h3>Location of origin B</h3>
+                    </td>
+                    <td>
+                        <h3>Type</h3>
+                    </td>
+                    <td>
+                        <h3>Coat Length</h3>
+                    </td>
+                    <td>
+                        <h3>Image</h3>
+                    </td>
+                </tr>
+                <tr class="first-row">
+                    <td>Abyssinian</td>
+                    <td>Asia</td>
+                    <td>Natural</td>
+                    <td>Short</td>
+                    <td>
+                        <h3>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Gustav_chocolate.jpg/330px-Gustav_chocolate.jpg"
+                                class="center" />
+                        </h3>
+                    </td>
+                </tr>
+
+                <tr class="second-row">
+                    <td>Aegean</td>
+                    <td>Greece</td>
+                    <td>Natural</td>
+                    <td>Semi-long</td>
+                    <td>
+                        <h3>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Aegean_cat.jpg/330px-Aegean_cat.jpg"
+                                class="center" />
+                        </h3>
+                    </td>
+                </tr>
+
+                <tr class="third-row">
+                    <td>American Bobtail</td>
+                    <td>the United States</td>
+                    <td>Mutation</td>
+                    <td>Semi-long</td>
+                    <td>
+                        <h3>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/American_bobtail_2.jpg/330px-American_bobtail_2.jpg"
+                                class="center" />
+                        </h3>
+                    </td>
+                </tr>
+
+                <tr class="source">
+                    <td>
+                        <h5>Source: Wikipedia</h5>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+p {
+    width: 33%;
+}
+
+ul {
+    margin-right: 20px;
+}
+
+.container {
+    background-color: rgb(226, 223, 218);
+}
+
+h1 {
+    background-color: rgb(61, 61, 61);
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 10px;
+    border: 0;
+}
+
+.left {
+    float: left;
+    margin-right: 50px;
+}
+
+.right {
+    float: right;
+}
+
+.rightMargin {
+    margin-right: 50px;
+}
+
+h2 {
+    display: inline;
+}
+
+img {
+    display: block;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
