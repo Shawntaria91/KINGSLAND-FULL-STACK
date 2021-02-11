@@ -6,64 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML Rainbow</title>
     <style>
-        html,
-        body {
-            margin: 0;
-            width: 100%;
-            height: 100%
-        }
-
-        #background {
-            width: 100%;
-            height: 100%;
-            background: red;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-
-        #background::before {
-            content: '';
-            width: 100%;
-            height: 12.5%;
-            background: orange;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        #background::before {
-            content: '';
-            width: 100%;
-            height: 12.5%;
-            background: gold;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-        }
-
-        .all {
+        div {
             padding: 10px;
             color: white;
-            box-sizing: content-box;
-            width: auro;
-            height: 20px;
-            margin: 0px;
+            height: 33, 3%;
+            width: 1000px;
+        }
+
+        #red {
+            background-color: #ff0000;
+
+        }
+
+        #orange {
+            background-color: orange;
+        }
+
+        #yellow {
+            background-color: yellow;
+        }
+
+        #green {
+            background-color: green;
+        }
+
+        #lightBlue {
+            background-color: rgb(0, 183, 255);
+        }
+
+        #blue {
+            background-color: blue;
+        }
+
+        #purple {
+            background-color: rgba(93, 13, 104, 0.972);
         }
     </style>
 </head>
 
 <body>
     <h1>HTML Rainbow</h1>
-    <div id="background" class="all">
-        <div class="red">Red</div>
-        <div class="orange">Orange</div>
-        <div class="yellow">Yellow</div>
-        <div class="green">Green</div>
-        <div class="light blue">Light blue</div>
-        <div class="blue">Blue</div>
-        <div class="purple">Purple</div>
+    <div id="red">
+        <h2>Red</h2>
+    </div>
+    <div id="orange">
+        <h2>Orange</h2>
+    </div>
+    </div>
+    <div id="yellow">
+        <h2>Yellow</h2>
+    </div>
+    <div id="green">
+        <h2>Green</h2>
+    </div>
+    <div id="lightBlue">
+        <h2>Light Blue</h2>
+    </div>
+    <div id="blue">
+        <h2>Blue</h2>
+    </div>
+    <div id="purple">
+        <h2>Purple</h2>
     </div>
 </body>
 
