@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Rainbow</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100%
+        }
+
+        #background {
+            width: 100%;
+            height: 100%;
+            background: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        #background::before {
+            content: '';
+            width: 100%;
+            height: 12.5%;
+            background: orange;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #background::before {
+            content: '';
+            width: 100%;
+            height: 12.5%;
+            background: gold;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .all {
+            padding: 10px;
+            color: white;
+            box-sizing: content-box;
+            width: auro;
+            height: 20px;
+            margin: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HTML Rainbow</h1>
+    <div id="background" class="all">
+        <div class="red">Red</div>
+        <div class="orange">Orange</div>
+        <div class="yellow">Yellow</div>
+        <div class="green">Green</div>
+        <div class="light blue">Light blue</div>
+        <div class="blue">Blue</div>
+        <div class="purple">Purple</div>
+    </div>
+</body>
+
+</html>
