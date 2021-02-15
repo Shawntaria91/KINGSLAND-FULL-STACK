@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About HTML Tags</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            cellpadding: 5px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .noborder {
+            empty-cells: show;
+            cell-border: none;
+            cellpadding: 0;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HTML commands:</h1>
+
+    <dl><b>&ltimg&gt</b>
+        <dt>
+        <dd>
+            <li>purpose: embeds an image into the document</li>
+            <li>example: &ltimg src=&quot../fluffy_cat.jpg&quot
+                height=&quot20%&quot alt=&quotsweet fluffy cat&quot&gt</li>
+            <li>attributes:</li>
+            <table style="width:50%">
+                <tr>
+                    <th>Attribute</th>
+                    <th>Values</th>
+                    <th>Meaning</th>
+                </tr>
+                <tr>
+                    <td class="center">src</td>
+                    <td>URL</td>
+                    <td>source file</td>
+                </tr>
+                <tr>
+                    <td class="center">height</td>
+                    <td>number, percentage</td>
+                    <td>The intrinsic height of the image, in pixels.
+                        Must be an integer without a unit.</td>
+                </tr>
+                <tr>
+                    <td class="center">width</td>
+                    <td>number, percentage</td>
+                    <td>The intrinsic width of the image in pixels.
+                        Must be an integer without a unit.</td>
+                </tr>
+                <tr>
+                    <td class="center">alt</td>
+                    <td>text</td>
+                    <td>Defines an alternative text description of the image.</td>
+                </tr>
+            </table>
+        </dd>
+        </dt>
+    </dl>
+    <dl><b>&lta&gt, &lt/a&gt</b>
+        <dt>
+        <dd>
+            <li>purpose: anchor element, creates a hyperlink to web pages, files,
+                email addresses, locations in the same page, or anything else a URL can address.</li>
+            <li>example: &lta href=&quothttps://en.wikipedia.org/wiki/Cat&quot Cats.&gt</li>
+            <li>attributes:</li>
+            <table style="width:50%">
+                <tr>
+                    <th>Attribute</th>
+                    <th>Values</th>
+                    <th>Meaning</th>
+                </tr>
+                <tr>
+                    <td class="center">href</td>
+                    <td>URL</td>
+                    <td>source file</td>
+                </tr>
+                <tr>
+                    <td class="center">target</td>
+                    <td>number, percentage</td>
+                    <td>The intrinsic height of the image, in pixels.
+                        Must be an integer without a unit.</td>
+                </tr>
+                <tr>
+                    <td class="noborder"></td>
+                    <td>number, percentage</td>
+                    <td>The intrinsic width of the image in pixels.
+                        Must be an integer without a unit.</td>
+                </tr>
+                <tr>
+                    <td class="noborder"></td>
+                    <td>text</td>
+                    <td>Defines an alternative text description of the image.</td>
+                </tr>
+            </table>
+        </dd>
+        </dt>
+    </dl>
+</body>
+
+</html>
