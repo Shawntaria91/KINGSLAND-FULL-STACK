@@ -16,13 +16,6 @@
         .center {
             text-align: center;
         }
-
-        .noborder {
-            empty-cells: show;
-            cell-border: none;
-            cellpadding: 0;
-            display: none;
-        }
     </style>
 </head>
 
@@ -32,11 +25,12 @@
     <dl><b>&ltimg&gt</b>
         <dt>
         <dd>
+            <br>
             <li>purpose: embeds an image into the document</li>
             <li>example: &ltimg src=&quot../fluffy_cat.jpg&quot
                 height=&quot20%&quot alt=&quotsweet fluffy cat&quot&gt</li>
             <li>attributes:</li>
-            <table style="width:50%">
+            <table style="width:auto">
                 <tr>
                     <th>Attribute</th>
                     <th>Values</th>
@@ -69,13 +63,16 @@
         </dt>
     </dl>
     <dl><b>&lta&gt, &lt/a&gt</b>
+
         <dt>
         <dd>
-            <li>purpose: anchor element, creates a hyperlink to web pages, files,
-                email addresses, locations in the same page, or anything else a URL can address.</li>
+            <br>
+            <li>purpose: anchor element, creates a <a href="https://en.wikipedia.org/wiki/Hyperlink">hyperlink</a>
+                to web pages, files, email addresses, locations in the same page, or anything else a URL can address.
+            </li>
             <li>example: &lta href=&quothttps://en.wikipedia.org/wiki/Cat&quot Cats.&gt</li>
             <li>attributes:</li>
-            <table style="width:50%">
+            <table style="width:auto">
                 <tr>
                     <th>Attribute</th>
                     <th>Values</th>
@@ -87,21 +84,51 @@
                     <td>source file</td>
                 </tr>
                 <tr>
-                    <td class="center">target</td>
-                    <td>number, percentage</td>
-                    <td>The intrinsic height of the image, in pixels.
-                        Must be an integer without a unit.</td>
+                    <td class="center" rowspan="5">target</td>
+                    <td>name_of_frame</td>
+                    <td>Where to display the linked URL, as the
+                        name for a browsing context (a tab, window, or &ltiframe&gt</td>
                 </tr>
                 <tr>
-                    <td class="noborder"></td>
-                    <td>number, percentage</td>
-                    <td>The intrinsic width of the image in pixels.
-                        Must be an integer without a unit.</td>
+                    <td>_blank</td>
+                    <td>usually a new tab, but users can configure browsers
+                        to open a new window instead</td>
                 </tr>
                 <tr>
-                    <td class="noborder"></td>
-                    <td>text</td>
-                    <td>Defines an alternative text description of the image.</td>
+                    <td>_parent</td>
+                    <td>the parent browsing context of the current one.
+                        If no parent, behave as _self</td>
+                </tr>
+                <tr>
+                    <td>_top</td>
+                    <td>the topmost browsing context (the "highest" context that is
+                        an ancestor of the current one). If no ancestors, behaves as _self.</td>
+                </tr>
+                <tr>
+                    <td>_self</td>
+                    <td>the current browsing context. (Default)</td>
+                </tr>
+            </table>
+        </dd>
+        </dt>
+    </dl>
+    <dl><b>&ltp&gt, &lt/p&gt</b>
+        <dt>
+        <dd>
+            <br>
+            <li>purpose: new paragraph</li>
+            <li>attributes:</li>
+            <table style="width:auto">
+                <tr>
+                    <th>Attribute</th>
+                    <th>Values</th>
+                    <th>Meaning</th>
+                </tr>
+                <tr>
+                    <td class="center">This element only includes the global attributes.<br>
+                        Note: The align on &ltp&gt tags is obsolete and shouldn't be used.</td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </table>
         </dd>
