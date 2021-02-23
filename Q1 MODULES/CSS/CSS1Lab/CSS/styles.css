@@ -1,0 +1,35 @@
+h2.main-title {
+	text-transform: uppercase;
+}
+
+h1.town {
+	text-transform: capitalize;
+}
+
+.town:first-letter {
+	letter-spacing: 1px;
+}
+
+.split-left {
+	float: left;
+	width: 50%;
+}
+
+.split-right {
+	float: right;
+	width: 50%;
+}
+
+.temp {
+	float: right;
+}
+
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+img {
+	size: 50;
+}
