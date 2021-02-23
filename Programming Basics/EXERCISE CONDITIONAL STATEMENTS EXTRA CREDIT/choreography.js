@@ -23,16 +23,23 @@ Both outputs should be formatted to two decimal places.
 
  */
 
- function main(steps, dancers, days) {
+function main(steps, dancers, days) {
+	let stepsPerDay = (steps / days / steps) * 100;
+	stepsPerDay = Math.ceil(stepsPerDay);
+	let percStepsPerDancer = stepsPerDay / dancers;
 
-    var stepsPerDay =((steps / days) / steps) * 100;
-    stepsPerDay = Math.ceil(stepsPerDay);
-    var percStepsPerDancer = (stepsPerDay / dancers);
-    
-    if (stepsPerDay <= (0.13) * 100) {
-        console.log(`Yes, they will succeed in that goal! ${percStepsPerDancer.toFixed(2)}%.`);
-    } else {
-        console.log(`No, they will not succeed in that goal! Required ${percStepsPerDancer.toFixed(2)}% steps to be learned per day.`);
-    }
- }
- main(10464, 20, 20);
+	if (stepsPerDay <= 0.13 * 100) {
+		console.log(
+			`Yes, they will succeed in that goal! ${percStepsPerDancer.toFixed(
+				2
+			)}%.`
+		);
+	} else {
+		console.log(
+			`No, they will not succeed in that goal! Required ${percStepsPerDancer.toFixed(
+				2
+			)}% steps to be learned per day.`
+		);
+	}
+}
+main(10464, 20, 20);

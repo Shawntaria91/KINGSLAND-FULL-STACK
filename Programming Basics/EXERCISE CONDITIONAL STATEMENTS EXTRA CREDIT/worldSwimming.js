@@ -24,18 +24,22 @@ slower."
 The result should be formatted to two decimal places
  */
 
- function main(record, distance, time) {
+function main(record, distance, time) {
+	let timeSeconds = distance * time;
+	let slowdownSeconds = parseInt(distance / 15) * 12.5;
+	let timeWithWater = timeSeconds + slowdownSeconds;
 
-    var timeSeconds = distance * time;
-    var slowdownSeconds = parseInt(distance / 15) * 12.5;
-    var timeWithWater = timeSeconds + slowdownSeconds;
-
-    if (timeWithWater > record) {
-        var difference = timeWithWater - record;
-        console.log(`No, he failed! He was ${difference.toFixed(2)} seconds slower.`);
-    }else {
-        console.log(`Yes, he succeeded! The new world record is ${timeWithWater.toFixed(2)} seconds.`);
-    }
-
- }
- main(10464, 1500, 20);
+	if (timeWithWater > record) {
+		let difference = timeWithWater - record;
+		console.log(
+			`No, he failed! He was ${difference.toFixed(2)} seconds slower.`
+		);
+	} else {
+		console.log(
+			`Yes, he succeeded! The new world record is ${timeWithWater.toFixed(
+				2
+			)} seconds.`
+		);
+	}
+}
+main(10464, 1500, 20);
