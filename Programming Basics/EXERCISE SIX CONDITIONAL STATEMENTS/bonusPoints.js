@@ -9,24 +9,25 @@ eve number - plus 1pt
 number ending in 5 - 2pts */
 
 function main(numOfPoints) {
-    var totalPoints = 0;
-    var bonusPoints = 0;
-    if (numOfPoints <= 100) {
-        bonusPoints = bonusPoints + 5;
-    } else if ((numOfPoints > 100) && (numOfPoints <= 1000)) {
-        bonusPoints = bonusPoints + (numOfPoints * 0.20);
-    } else if (numOfPoints > 1000) {
-        bonusPoints = bonusPoints + (numOfPoints * 0.10);
-    } else {}
+	let totalPoints = 0;
+	let bonusPoints = 0;
+	if (numOfPoints <= 100) {
+		bonusPoints = bonusPoints + 5;
+	} else if (numOfPoints > 100 && numOfPoints <= 1000) {
+		bonusPoints = bonusPoints + numOfPoints * 0.2;
+	} else if (numOfPoints > 1000) {
+		bonusPoints = bonusPoints + numOfPoints * 0.1;
+	} else {
+	}
 
-    if ((bonusPoints > 0) && (numOfPoints % 2 == 0)) {
-        bonusPoints = bonusPoints + 1;
-
-    }else if ((bonusPoints > 0) && (numOfPoints % 5 == 0)) {
-        bonusPoints = bonusPoints + 2;
-    } else {}
-    totalPoints = numOfPoints + bonusPoints;
-    console.log(bonusPoints);
-    console.log(totalPoints);
+	if (bonusPoints > 0 && numOfPoints % 2 == 0) {
+		bonusPoints = bonusPoints + 1;
+	} else if (bonusPoints > 0 && numOfPoints % 5 == 0) {
+		bonusPoints = bonusPoints + 2;
+	} else {
+	}
+	totalPoints = numOfPoints + bonusPoints;
+	console.log(bonusPoints);
+	console.log(totalPoints);
 }
 main(2703);

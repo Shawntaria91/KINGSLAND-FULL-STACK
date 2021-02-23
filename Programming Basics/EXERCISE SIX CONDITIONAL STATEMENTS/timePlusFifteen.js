@@ -8,19 +8,18 @@ minutes will be written always with two digits (with a leading zero if necessary
 */
 
 function main(hours, minutes) {
+	let totalMinutes = hours * 60 + minutes + 15;
+	minutes = totalMinutes % 60;
+	hours = Math.floor(totalMinutes / 60);
 
-    var totalMinutes = (hours * 60) + minutes + 15;
-    minutes = totalMinutes % 60;
-    hours = Math.floor(totalMinutes / 60);
-
-    if (minutes < 10) {
-        minutes = "0" + minutes;
-    }
-    if (hours == 24) {
-        hours = 0;
-    }
-    console.log(hours + ":" + minutes); {
-        
-    }
+	if (minutes < 10) {
+		minutes = "0" + minutes;
+	}
+	if (hours == 24) {
+		hours = 0;
+	}
+	console.log(`${hours}:${minutes}`);
+	{
+	}
 }
 main(23, 59);
