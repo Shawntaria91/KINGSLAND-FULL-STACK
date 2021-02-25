@@ -2,13 +2,16 @@ function main(hourExam, minExam, hourArrive, minArrive) {
 	totalExamMins = hourExam * 60 + minExam;
 	totalArriveMins = hourArrive * 60 + minArrive;
 
-	if (totalArriveMins > totalExamMins) {
+	if (totalArriveMins > totalExamMins + 30) {
 		console.log("Late");
 	} else if (
 		totalArriveMins == totalExamMins ||
-		totalArriveMins >= totalExamMins - 30
+		(totalArriveMins >= totalExamMins - 30 &&
+			totalArriveMins < totalExamMins) ||
+		(totalArriveMins <= totalExamMins + 30 &&
+			totalArriveMins > totalExamMins)
 	) {
-		console.log("On Time");
+		console.log("On time");
 	} else if (totalArriveMins < totalExamMins - 30) {
 		console.log("Early");
 	}
@@ -60,4 +63,9 @@ function main(hourExam, minExam, hourArrive, minArrive) {
 		}
 	}
 }
-main(18, 15, 19, 50);
+//main(9, 30, 10, 01);
+//main(9, 00, 8, 30);
+//main(9, 00, 10, 30);
+//main(14, 00, 14, 05);
+//main(10, 00, 10, 00);
+main(11, 30, 10, 55);
