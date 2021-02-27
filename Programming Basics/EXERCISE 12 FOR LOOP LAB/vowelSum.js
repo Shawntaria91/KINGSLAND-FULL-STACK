@@ -5,9 +5,9 @@ function main(n, characters) {
 		if (letter === "a") {
 			sum++;
 		} else if (letter === "e") {
-			sum += 2;
+			sum += 2; //sum = sum + 2;
 		} else if (letter === "i") {
-			sum += 3;
+			sum += 3; //sum = sum + 3;
 		} else if (letter === "o") {
 			sum += 4;
 		} else if (letter === "u") {
