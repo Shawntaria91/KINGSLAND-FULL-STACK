@@ -19,7 +19,5 @@ function main(hours, minutes) {
 		hours = 0;
 	}
 	console.log(`${hours}:${minutes}`);
-	{
-	}
 }
 main(23, 59);

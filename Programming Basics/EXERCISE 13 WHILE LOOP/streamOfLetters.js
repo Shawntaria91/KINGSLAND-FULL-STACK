@@ -1,60 +1,29 @@
-function main(letter) {
-    let command = "";
-    let word = "";
-    let sumSecretCommand = "";
-    let i = 0;
-    let currentLetter = letter[i] + " ";
-    let newWord = "";
-
-   
-    while (command != "End")
-    {
-        command = console.log();
-        if (command != "End")
-        {
-            currentLetter = currentLetter.parse(command);
-            if ((currentLetter >= 65 && currentLetter <= 90) || (currentLetter >= 97 && currentLetter <= 122))
-            {
-                if (currentLetter == 'c' && !(sumSecretCommand.Contains("c")))
-                {
-                    sumSecretCommand += char.ToString(currentLetter);
-
-                }
-                else if (currentLetter == 'o' && !(sumSecretCommand.Contains("o")))
-                {
-                    sumSecretCommand += char.ToString(currentLetter);
-                }
-                else if (currentLetter == 'n' && !(sumSecretCommand.Contains("n")))
-                {
-                    sumSecretCommand += char.ToString(currentLetter);
-                }
-                else
-                {
-                    word += char.ToString(currentLetter);
-
-                }
-                if (sumSecretCommand.Contains("c") && sumSecretCommand.Contains("o") && sumSecretCommand.Contains("n"))
-                {
-                    word += " ";
-                    newWord = word;
-                    sumSecretCommand = "";
-                }
-            }
-        }
-        else
-        {
-            break;
-        }
-    }
-    if (command == "End")
-    {
-        console.log(newWord);
-    }
+function main(letters) {
+	let word = "";
+	let visited = "";
+	let currentLetter = letters.shift();
+	while (currentLetter != "End") {
+		if (
+			currentLetter == "c" ||
+			currentLetter == "o" ||
+			currentLetter == "n"
+		) {
+			if (visited == currentLetter) {
+				word += currentLetter;
+				currentLetter = letters.shift();
+			} else {
+				visited = currentLetter;
+				currentLetter = letters.shift();
+			}
+		} else {
+			word += currentLetter;
+			currentLetter = letters.shift();
+		}
+	}
+	console.log(word);
 }
-   
 
 main(["H", "n", "e", "l", "l", "o", "o", "c"]);
-
 
 /**
  * Write a program that reads a hidden message in a sequence of symbols.
