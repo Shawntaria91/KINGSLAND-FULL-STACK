@@ -1,11 +1,11 @@
-// function main(numOfPpl, entranceFee, sunbedPrice, umbrellaPrice) {
-// 	let totalEntranceFee = numOfPpl * entranceFee;
-// 	let totalSunbedPrice = Math.ceil(numOfPpl * 0.75) * sunbedPrice;
-// 	let totalUmbrellaPrice = Math.ceil(numOfPpl * 0.5) * umbrellaPrice;
-// 	let totalPrice = totalEntranceFee + totalSunbedPrice + totalUmbrellaPrice;
-// 	console.log(`${totalPrice.toFixed(2)} dollars.`);
-// }
-// main(21, 5.5, 4.4, 6.2);
+function main(numOfPpl, entranceFee, sunbedPrice, umbrellaPrice) {
+	let totalEntranceFee = numOfPpl * entranceFee;
+	let totalSunbedPrice = Math.ceil(numOfPpl * 0.75) * sunbedPrice;
+	let totalUmbrellaPrice = Math.ceil(numOfPpl * 0.5) * umbrellaPrice;
+	let totalPrice = totalEntranceFee + totalSunbedPrice + totalUmbrellaPrice;
+	console.log(`${totalPrice.toFixed(2)} dollars.`);
+}
+main(21, 5.5, 4.4, 6.2);
 
 /**
  * It is hot and sunny outside, so your boss decides to organize a workday by the swimming pool. Your
@@ -24,10 +24,10 @@ integer number.
 Math.ceil(); 
  */
 
-function main(dec) {
-	let roundUp = dec / 10;
-	console.log(roundUp);
-	let finalRoundUp = roundUp + (1 - roundUp);
-	console.log(finalRoundUp);
-}
-main(2.3);
+// function main(dec) {
+// 	let roundUp = dec / 10;
+// 	console.log(roundUp);
+// 	let finalRoundUp = roundUp + (1 - roundUp);
+// 	console.log(finalRoundUp);
+// }
+// main(2.3);
