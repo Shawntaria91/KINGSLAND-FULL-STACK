@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FromJSONToHTMLTable</title>
+    <style>
+      table,
+      th {
+        border: groove;
+        border-collapse: collapse;
+      }
+      td {
+        border: 1px solid black;
+      }
+      td,
+      th {
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper"></div>
+    <script>
+      function fromJSONToHTMLTable(input) {
+        let arr = JSON.parse(input);
+        let html = "<table>\n  <tr>".trim();
+        let finalTable = "";
+        makeKeyRow(arr);
+        makeValueRow(arr);
+        function makeKeyRow(arr) {
+          for (let key of Object.keys(arr[0])) {
+            html += `<th>${key}</th>`;
+          }
+          html += "</tr>\n";
+        }
+        function makeValueRow(arr) {
+          for (let obj of arr) {
+            html += "  <tr>";
+            for (let value of Object.keys(obj)) {
+              html += `<td>${htmlEscape(obj[value])}</td>`;
+            }
+            html += "</tr>\n";
+          }
+          let tempTable = html + "</table> ".trim(); // here is correct html
+          console.log(tempTable);
+          finalTable = tempTable;
+        }
+        function htmlEscape(key) {
+          const encoded = encodeURIComponent(key);
+          return encoded;
+        }
+        console.log("final table is ", finalTable);
+        return decodeURIComponent(finalTable);
+      }
+      window.onload = function () {
+        let container = document.getElementById("wrapper");
+        container.innerHTML = fromJSONToHTMLTable([
+          '[{"Name":"Tomatoes & Chips","Price":2.35},{"Name":"J&B Chocolate","Price":0.96}]',
+        ]);
+      };
+    </script>
+  </body>
+</html>

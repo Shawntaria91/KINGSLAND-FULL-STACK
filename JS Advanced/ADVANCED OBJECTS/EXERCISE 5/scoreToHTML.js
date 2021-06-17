@@ -12,22 +12,25 @@ The output should be printed on the console - a table with 2 columns - "name" an
 containing the values from the objects as rows
 */
 function main(input) {
-    scoreToHTML(input);
+	scoreToHTML(input);
 }
-function scoreToHTML(input) { 
-    let scores = JSON.parse(input);
-    let html = "<table>\n";
-    html += "  <tr><th>name</th><th>score</th></tr>\n";
-    function htmlEsc(key) {
-        const encoded = encodeURIComponent(key);
-        return encoded;
-    }
-    for (let score of scores) {
-        html += `  <tr>`;
-        html += `<td>${htmlEsc(score['name'])}</td>`;
-        html += `<td>${htmlEsc(score['score'])}</td>`;
-        html += `</tr>\n`;
-    }
-    console.log(html + "</table>");
+function scoreToHTML(input) {
+	let scores = JSON.parse(input);
+	let html = "<table>\n";
+	html += "  <tr><th>name</th><th>score</th></tr>\n";
+	function htmlEsc(key) {
+		const encoded = encodeURIComponent(key);
+		return encoded;
+	}
+	for (let score of scores) {
+		html += `  <tr>`;
+		html += `<td>${htmlEsc(score["name"])}</td>`;
+		html += `<td>${htmlEsc(score["score"])}</td>`;
+		html += `</tr>\n`;
+	}
+	console.log(html + "</table>");
 }
-main(['[{"name":"Peter","score":479},{"name":"George","score":205}]']);
+//main(['[{"name":"Peter","score":479},{"name":"George","score":205}]']);
+main([
+	'[{"name":"Peter & Kiro","score":479},{"name":"George, Maria & Viki","score":205}]',
+]);
