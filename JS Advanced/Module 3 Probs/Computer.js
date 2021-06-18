@@ -1,8 +1,8 @@
 class Computer {
-	constructor(ramMemory, cpuGHz, hddMemory) {
-		this.ramMemory = ramMemory;
+	constructor(ramMem, cpuGHz, hddMem) {
+		this.ramMemory = ramMem;
 		this.cpuGHz = cpuGHz;
-		this.hddMemory = hddMemory;
+		this.hddMemory = hddMem;
 		this.taskManager = [];
 		this.installedPrograms = [];
 	}
@@ -34,8 +34,8 @@ class Computer {
 			throw new Error("Control panel is not responding");
 		}
 
-		let freedSpace = uninstallProgram.requiredSpace;
-		this.hddMemory += freedSpace;
+		let spaceFreed = uninstallProgram.requiredSpace;
+		this.hddMemory += spaceFreed;
 
 		this.installedPrograms.splice(
 			this.installedPrograms.indexOf(uninstallProgram),
@@ -54,24 +54,24 @@ class Computer {
 			throw new Error(`The ${name} is already open`);
 		}
 
-		let ramUsage = this.calculateRamUsage(program);
-		let cpuUsage = this.calculateCpuUsage(program);
+		let ramUsage = this.calcRamUsage(program);
+		let cpuUsage = this.calcCpuUsage(program);
 
-		if (!this.hasAvailableMemory(ramUsage)) {
+		if (!this.hasAvailableMem(ramUsage)) {
 			throw new Error(`${program.name} caused out of memory exception`);
 		} else if (!this.hasAvailableCPU(cpuUsage)) {
 			throw new Error(`${program.name} caused out of cpu exception`);
 		}
 
-		let runningProgram = {
+		let openedProgram = {
 			name: program.name,
 			ramUsage,
 			cpuUsage,
 		};
 
-		this.taskManager.push(runningProgram);
+		this.taskManager.push(openedProgram);
 
-		return runningProgram;
+		return openedProgram;
 	}
 
 	getSystemRamUsage(taskManager) {
@@ -88,7 +88,7 @@ class Computer {
 		return systemCpuUsage;
 	}
 
-	hasAvailableMemory(programRamUsage) {
+	hasAvailableMem(programRamUsage) {
 		return this.getSystemRamUsage(this.taskManager) + programRamUsage < 100;
 	}
 
@@ -96,11 +96,11 @@ class Computer {
 		return this.getSystemCpuUsage(this.taskManager) + programCpuUsage < 100;
 	}
 
-	calculateRamUsage(program) {
+	calcRamUsage(program) {
 		return (program.requiredSpace / this.ramMemory) * 1.5;
 	}
 
-	calculateCpuUsage(program) {
+	calcCpuUsage(program) {
 		return (program.requiredSpace / this.cpuGHz / 500) * 1.5;
 	}
 

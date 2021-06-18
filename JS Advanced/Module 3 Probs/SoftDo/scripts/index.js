@@ -5,13 +5,13 @@
 
 // This function will be invoked when the html is loaded. Check the console in the browser or index.html file.
 function mySolution() {
-	const DEFAULT_AVATAR_VALUES = {
+	const DEFAULT_ICON_PROP = {
 		src: "./images/user.png",
 		width: "32",
 		height: "32",
 	};
 
-	const INPUT_QUESTION_ELEMENTS = {
+	const INPUT_QUESTION_ELEMS = {
 		question: document
 			.querySelector("#inputSection")
 			.querySelector("textarea"),
@@ -24,12 +24,12 @@ function mySolution() {
 	};
 
 	const CREATE_QUESTION = {
-		parent: createWrapperElement,
+		parent: createWrapperElem,
 		btn: createBtn,
-		username: createUsernameElement,
-		question: createQuestionElement,
-		actions: createWrapperElement,
-		avatar: createAvatar,
+		username: createUserElem,
+		question: createQuestionElem,
+		actions: createWrapperElem,
+		icon: createIcon,
 		inputField: createInputField,
 		replies: createRepliesList,
 	};
@@ -47,17 +47,17 @@ function mySolution() {
 	let openQuestions = document.querySelector("#openQuestions");
 	let pendingQuestions = document.querySelector("#pendingQuestions");
 
-	INPUT_QUESTION_ELEMENTS.sendBtn.addEventListener(
+	INPUT_QUESTION_ELEMS.sendBtn.addEventListener(
 		"click",
 		BTN_EVENT_HANDLERS.sendQuestion
 	);
 
 	function sendQuestionEventHandler() {
-		let questionContent = INPUT_QUESTION_ELEMENTS.question.value;
-		console.log(questionContent);
-		let username = INPUT_QUESTION_ELEMENTS.username.value;
+		let questionText = INPUT_QUESTION_ELEMS.question.value;
+		console.log(questionText);
+		let username = INPUT_QUESTION_ELEMS.username.value;
 
-		if (questionContent === "") {
+		if (questionText === "") {
 			console.log("inside");
 			return;
 		}
@@ -66,35 +66,35 @@ function mySolution() {
 			username = DEFAULT_USERNAME;
 		}
 
-		let parentElement = CREATE_QUESTION.parent("div", "pendingQuestion");
+		let parentElem = CREATE_QUESTION.parent("div", "pendingQuestion");
 
-		let avatarElement = CREATE_QUESTION.avatar(
-			DEFAULT_AVATAR_VALUES.src,
-			DEFAULT_AVATAR_VALUES.height,
-			DEFAULT_AVATAR_VALUES.width
+		let iconElem = CREATE_QUESTION.icon(
+			DEFAULT_ICON_PROP.src,
+			DEFAULT_ICON_PROP.height,
+			DEFAULT_ICON_PROP.width
 		);
-		let usernameElement = CREATE_QUESTION.username("span", username);
-		let questionElement = CREATE_QUESTION.question("p", questionContent);
-		let actionsElement = CREATE_QUESTION.actions("div", "actions");
+		let usernameElem = CREATE_QUESTION.username("span", username);
+		let questionElem = CREATE_QUESTION.question("p", questionText);
+		let actionsElem = CREATE_QUESTION.actions("div", "actions");
 		let archiveBtn = CREATE_QUESTION.btn("archive", "Archive");
 		let openBtn = CREATE_QUESTION.btn("open", "Open");
 
-		parentElement.appendChild(avatarElement);
-		parentElement.appendChild(usernameElement);
-		parentElement.appendChild(questionElement);
-		parentElement.appendChild(actionsElement);
+		parentElem.appendChild(iconElem);
+		parentElem.appendChild(usernameElem);
+		parentElem.appendChild(questionElem);
+		parentElem.appendChild(actionsElem);
 
-		actionsElement.appendChild(archiveBtn);
-		actionsElement.appendChild(openBtn);
+		actionsElem.appendChild(archiveBtn);
+		actionsElem.appendChild(openBtn);
 
 		archiveBtn.addEventListener("click", BTN_EVENT_HANDLERS.archive);
 		openBtn.addEventListener("click", BTN_EVENT_HANDLERS.open);
 
-		pendingQuestions.appendChild(parentElement);
+		pendingQuestions.appendChild(parentElem);
 		console.log(pendingQuestions);
 	}
 
-	function createWrapperElement(tagName, className) {
+	function createWrapperElem(tagName, className) {
 		let parent = document.createElement(tagName);
 		parent.setAttribute("class", className);
 
@@ -157,26 +157,26 @@ function mySolution() {
 		let replySection =
 			event.target.parentNode.parentNode.querySelector(".replySection");
 		let input = replySection.querySelector(".replyInput");
-		let replyContent = input.value;
+		let replyText = input.value;
 
-		if (replyContent === "") {
+		if (replyText === "") {
 			return;
 		}
 
 		let replies = replySection.querySelector(".reply");
 		let reply = document.createElement("li");
-		reply.textContent = replyContent;
+		reply.textContent = replyText;
 		replies.appendChild(reply);
 		input.value = "";
 	}
 
 	function createInputField(className, type, placeholder) {
-		let inputElement = document.createElement("input");
-		inputElement.setAttribute("class", className);
-		inputElement.setAttribute("type", type);
-		inputElement.setAttribute("placeholder", placeholder);
+		let inputElem = document.createElement("input");
+		inputElem.setAttribute("class", className);
+		inputElem.setAttribute("type", type);
+		inputElem.setAttribute("placeholder", placeholder);
 
-		return inputElement;
+		return inputElem;
 	}
 
 	function createBtn(className, textContent) {
@@ -195,21 +195,21 @@ function mySolution() {
 		return list;
 	}
 
-	function createUsernameElement(tagName, username) {
+	function createUserElem(tagName, username) {
 		let element = document.createElement(tagName);
 		element.textContent = username;
 
 		return element;
 	}
 
-	function createQuestionElement(tagName, questionContent) {
+	function createQuestionElem(tagName, questionContent) {
 		let element = document.createElement(tagName);
 		element.textContent = questionContent;
 
 		return element;
 	}
 
-	function createAvatar(src, height, width) {
+	function createIcon(src, height, width) {
 		let img = document.createElement("img");
 		img.setAttribute("src", src);
 		img.setAttribute("width", width);
